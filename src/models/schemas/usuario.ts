@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 const nameSchema = new Schema({
     "title": String,
@@ -75,8 +75,6 @@ const usuarioSchema = new Schema({
         type: String,
         enum: ['trash', 'published']
     },
-}, {
-    collection: 'usuarios'
 });
 
-export default usuarioSchema;
+export default model('usuarios', usuarioSchema);
